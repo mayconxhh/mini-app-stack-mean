@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "administrador-de-tareas",
+  "version": "1.0.0",
+  "description": "Registra tus tarea segun sea su prioridad",
+  "main": "server.js",
+  "author": "mayconxhh <@mayconxhh>",
+  "license": "MIT",
+  "engines": {
+    "node": "6.10.0",
+    "npm": "3.10.10"
+  },
+  "devDependencies": {
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.22.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^2.1.0",
+    "gulp-watch": "^4.3.11",
+    "nib": "^1.1.2",
+    "pump": "^1.0.2",
+    "stylus": "^0.54.5",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.0",
+    "mongoose": "^4.8.5",
+    "path": "^0.12.7"
+  }
+}

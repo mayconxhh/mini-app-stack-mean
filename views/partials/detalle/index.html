@@ -1,0 +1,31 @@
+<div class="Container">
+	<div class="Container__title">
+		<h1 class="text-center">Administrador de Tareas</h1>
+	</div>
+	<form class="Container__form">
+		<h3 class="Container__form--title">Editar la tarea</h3>
+		<div class="form-group has-feedback">
+			<input type="text" class="form-control" placeholder="Tarea a realizar" ng-model="tarea.nombre" value="{{ tarea.nombre }}">
+			<span class="glyphicon icon-menu form-control-feedback" aria-hidden="true"></span>
+		</div>
+		<div class="form-group radioButtons">
+			<span class="icon-clock"></span><span> Elije la prioridad:</span>
+			<label class="radio-inline">
+			  <input ng-checked="tarea.prioridad === 0" type="radio" ng-model="tarea.prioridad" value="0" /> Baja
+			</label>
+			<label class="radio-inline">
+			  <input ng-checked="tarea.prioridad === 1" type="radio" ng-model="tarea.prioridad" value="1" /> Normal
+			</label>
+			<label class="radio-inline">
+			  <input ng-checked="tarea.prioridad === 2" type="radio" ng-model="tarea.prioridad" value="2" /> Alta
+			</label>
+		</div>
+		<div class="buttons">
+			<button class="btn btn-primary" ng-click="actualizar()" >Actualizar</button>
+			<button class="btn btn-danger" ng-click="eliminar()" >Eliminar</button>
+		</div>
+	</form>
+	<div class="Container__options">
+		<a class="btn btn-warning"" href="/">Regresar</a>
+	</div>
+</div>

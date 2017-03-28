@@ -1,0 +1,42 @@
+<div class="Container">
+	<div class="Container__title">
+		<h1 class="text-center">Administrador de Tareas</h1>
+	</div>
+	<form class="Container__form">
+		<h3 class="Container__form--title">Agrega una nueva tarea</h3>
+		<div class="form-group has-feedback">
+			<input id="nombre" class="form-control" type="text" placeholder="Tarea a realizar" ng-model="tarea.nombre">
+			<span class="glyphicon icon-menu form-control-feedback" aria-hidden="true"></span>
+		</div>
+		<div class="form-group radioButtons">
+			<span class="icon-clock"></span><span> Elije la prioridad:</span>
+			<label class="radio-inline">
+			  <input type="radio" ng-model="tarea.prioridad" value="0"> Baja
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" ng-model="tarea.prioridad" value="1"> Normal
+			</label>
+			<label class="radio-inline">
+			  <input type="radio" ng-model="tarea.prioridad" value="2"> Alta
+			</label>
+		</div>
+		<div class="buttons">
+			<button class="btn btn-primary" type="submit" ng-click="agregar()">Agregar</button>
+		</div>
+	</form>
+	<div class="Container__list">
+		<h4>Tareas registradas</h4>
+		<div class="List" ng-repeat="tarea in tareas | orderBy: '-prioridad'">
+			<!-- <a class="linkIcons" href="/detalle"><span class="icon-circle-up"></span></a> -->
+			<span  ng-hide="tarea.prioridad==2" ng-click="masPrioridad(tarea)" class="icons icon-circle-up"></span>
+			<!-- <a class="linkIcons" href="/detalle"><span class="icon-circle-down"></span></a> -->
+			<span ng-hide="tarea.prioridad==0" ng-click="menosPrioridad(tarea)" class="icons icon-circle-down"></span>
+			<span class="text">
+				{{ prioridades[tarea.prioridad] }} | 
+				<a href="#"> {{ tarea.nombre }} </a>
+			</span>
+			<span ng-click="editarTarea(tarea)" class="icons icon-pencil text-warning"></span>
+			<span ng-click="eliminarTarea(tarea)" class="icons icon-cross text-danger"></span>
+		</div>
+	</div>
+</div>
